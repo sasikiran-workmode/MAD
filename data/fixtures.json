@@ -1,0 +1,372 @@
+{
+  "cases": [
+    {
+      "id": "agree_capital",
+      "query": "What is the capital of Australia?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "The capital of Australia is Canberra.",
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://www.australia.gov.au/", "title": "Australia.gov.au — Official Government Site", "snippet": "Canberra is the capital city of Australia, located in the Australian Capital Territory."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "Canberra is the capital city of Australia.",
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://en.wikipedia.org/wiki/Canberra", "title": "Canberra — Wikipedia", "snippet": "Canberra is the capital city of Australia. It is the largest inland city and the eighth-largest city overall."}
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "Australia's capital is Canberra, not Sydney — a common misconception.",
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://doi.org/10.1000/australia_geo", "title": "Australian Urban Geography", "snippet": "Despite popular belief, Canberra — not Sydney — is the capital of Australia."}
+        }
+      },
+      "expected_state": "agreement",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": "The capital of Australia is Canberra.",
+      "required_facts": ["Canberra"],
+      "forbidden_facts": ["Sydney", "Melbourne"]
+    },
+    {
+      "id": "factual_boiling",
+      "query": "What is the boiling point of water at sea level?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Water boils at 100 degrees Celsius (212 degrees Fahrenheit) at sea level.",
+          "date": null,
+          "version": null,
+          "scope": "sea level",
+          "source": {"url": "https://www.britannica.com/science/boiling-point", "title": "Boiling Point — Britannica", "snippet": "The boiling point of water at sea level under standard atmospheric pressure is 100 degrees Celsius."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "At standard atmospheric pressure (sea level), water boils at 100°C or 212°F.",
+          "date": null,
+          "version": null,
+          "scope": "sea level",
+          "source": {"url": "https://en.wikipedia.org/wiki/Boiling_point", "title": "Boiling Point — Wikipedia", "snippet": "Water has a boiling point of 100°C (212°F) at 1 atm standard pressure."}
+        },
+        "scholarly_agent": {
+          "status": "no_relevant_results",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "No scholarly papers on basic chemistry constants"
+        }
+      },
+      "expected_state": "agreement",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": "Water boils at 100°C (212°F) at sea level under standard atmospheric pressure.",
+      "required_facts": ["100"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "temporal_policy",
+      "query": "When was India's National Education Policy introduced?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "India's National Education Policy was introduced in 2020, approved by the Union Cabinet on 29 July 2020.",
+          "date": "2020",
+          "version": null,
+          "scope": "India",
+          "source": {"url": "https://www.education.gov.in/nep/about-nep", "title": "National Education Policy 2020 — Ministry of Education India", "snippet": "The National Education Policy 2020 was approved by the Union Cabinet on 29 July 2020."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "India's National Education Policy was introduced in 1986 under Prime Minister Rajiv Gandhi.",
+          "date": "1986",
+          "version": null,
+          "scope": "India",
+          "source": {"url": "https://en.wikipedia.org/wiki/National_Education_Policy_(India)", "title": "National Education Policy — Wikipedia", "snippet": "The National Education Policy 1986 was formulated under Rajiv Gandhi's government and shaped Indian education for decades."}
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "The most recent National Education Policy was adopted in 2020, replacing decades-old frameworks.",
+          "date": "2020",
+          "version": null,
+          "scope": "India",
+          "source": {"url": "https://doi.org/10.1000/nep2020", "title": "Analysing India's NEP 2020 — Journal of Education Policy", "snippet": "NEP 2020 represents a paradigm shift, focusing on multidisciplinary education and skill development."}
+        }
+      },
+      "expected_state": "disagreement",
+      "expected_conflict_type": "temporal",
+      "expected_debate": true,
+      "expected_answer": "India has had two National Education Policies — the original in 1986 and the current one adopted in 2020.",
+      "required_facts": ["2020"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "version_python",
+      "query": "What new features does Python 3.13 have?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Python 3.13 introduces an experimental free-threaded mode (no GIL) and an improved interactive REPL.",
+          "date": "2024",
+          "version": "3.13",
+          "scope": null,
+          "source": {"url": "https://docs.python.org/3.13/whatsnew/3.13.html", "title": "What's New in Python 3.13 — Python Docs", "snippet": "Python 3.13 introduces free-threaded mode (PEP 703), an improved REPL, and experimental JIT infrastructure."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "Python 3.14 will introduce a production-ready JIT compiler and lazy imports for faster startup.",
+          "date": "2025",
+          "version": "3.14",
+          "scope": null,
+          "source": {"url": "https://en.wikipedia.org/wiki/Python_(programming_language)", "title": "Python — Wikipedia", "snippet": "Python 3.14, planned for 2025, will feature a production-ready JIT compiler and lazy imports."}
+        },
+        "scholarly_agent": {
+          "status": "no_relevant_results",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "No peer-reviewed papers on Python 3.13 release features"
+        }
+      },
+      "expected_state": "disagreement",
+      "expected_conflict_type": "version",
+      "expected_debate": true,
+      "expected_answer": "Python 3.13 (released 2024) adds free-threaded mode and a new REPL. Python 3.14 (2025) will add a JIT compiler — these are different versions.",
+      "required_facts": ["3.13"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "contextual_drug",
+      "query": "Is aspirin safe to take?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Aspirin is safe and effective for adults as a pain reliever and for cardiovascular prevention.",
+          "date": null,
+          "version": null,
+          "scope": "adults",
+          "source": {"url": "https://www.mayoclinic.org/drugs-supplements/aspirin-oral-route/", "title": "Aspirin — Mayo Clinic", "snippet": "Aspirin is widely used by adults for pain relief, fever reduction, and cardiovascular risk reduction."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "Aspirin is dangerous for children and teenagers due to the risk of Reye's syndrome.",
+          "date": null,
+          "version": null,
+          "scope": "children",
+          "source": {"url": "https://en.wikipedia.org/wiki/Reye_syndrome", "title": "Reye's Syndrome — Wikipedia", "snippet": "Aspirin use in children and teenagers with viral illness is linked to Reye's syndrome, a rare but serious condition."}
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "Clinical guidelines recommend aspirin for adult cardiovascular prevention but strictly contraindicate it in paediatric patients.",
+          "date": "2023",
+          "version": null,
+          "scope": "adults vs children",
+          "source": {"url": "https://doi.org/10.1000/aspirin_guidelines", "title": "Aspirin in Clinical Practice 2023 — JAMA", "snippet": "Aspirin is contraindicated in children under 16 due to Reye's syndrome risk, while recommended for adult cardiovascular prevention."}
+        }
+      },
+      "expected_state": "disagreement",
+      "expected_conflict_type": "contextual",
+      "expected_debate": true,
+      "expected_answer": "Aspirin is safe for adults but dangerous for children — the answer depends on the patient's age group.",
+      "required_facts": ["safe", "aspirin"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "source_blog_vs_paper",
+      "query": "Does the MMR vaccine cause autism?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "No, the MMR vaccine is safe and does not cause autism — scientific consensus is clear.",
+          "date": "2019",
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://www.cdc.gov/vaccinesafety/concerns/autism.html", "title": "Vaccines Do Not Cause Autism — CDC", "snippet": "Extensive research consistently shows that vaccines are not associated with autism spectrum disorder."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "A 1998 Wakefield study claimed MMR vaccination caused autism in children, sparking widespread controversy.",
+          "date": "1998",
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://en.wikipedia.org/wiki/MMR_vaccine_controversy", "title": "MMR Vaccine Controversy — Wikipedia", "snippet": "The 1998 Lancet paper by Andrew Wakefield claimed MMR vaccination caused autism, later retracted for fraud."}
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "Peer-reviewed studies involving over 1.2 million children confirm there is no causal link between MMR vaccination and autism.",
+          "date": "2019",
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://doi.org/10.1016/j.vaccine.2019.01.057", "title": "MMR Vaccination and Autism — The Lancet", "snippet": "A Danish cohort of 650,000 children found no association between MMR vaccination and autism."}
+        }
+      },
+      "expected_state": "disagreement",
+      "expected_conflict_type": "source",
+      "expected_debate": true,
+      "expected_answer": "No — the MMR vaccine does not cause autism. The original 1998 Wakefield study was fraudulent and retracted.",
+      "required_facts": ["does not", "autism"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "unrelated_evidence",
+      "query": "Is coffee good for heart health?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Moderate coffee consumption (2–3 cups per day) is associated with reduced cardiovascular disease risk.",
+          "date": "2022",
+          "version": null,
+          "scope": "adults",
+          "source": {"url": "https://www.heart.org/coffee-heart-health", "title": "Coffee and Your Heart — American Heart Association", "snippet": "Studies suggest moderate coffee intake may benefit heart health in adults."}
+        },
+        "reference_agent": {
+          "status": "ok",
+          "claim": "Coffee originated in Ethiopia in the 15th century and spread globally through trade routes.",
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://en.wikipedia.org/wiki/Coffee", "title": "Coffee — Wikipedia", "snippet": "Coffee was first cultivated in Ethiopia and Yemen before spreading to the rest of the world."}
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "Coffee contains polyphenols and antioxidants that may reduce inflammation and oxidative stress.",
+          "date": "2023",
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://doi.org/10.1000/coffee_antioxidants", "title": "Coffee Bioactive Compounds — Journal of Nutrition", "snippet": "Coffee's antioxidant content may contribute to its observed health benefits."}
+        }
+      },
+      "expected_state": "uncertain",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": "Evidence neither clearly agreed nor conflicted — sources discuss different aspects of coffee.",
+      "required_facts": ["coffee"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "one_agent_fails",
+      "query": "What is the population of Tokyo?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Tokyo's greater metropolitan area has approximately 37 million people, making it the world's largest urban agglomeration.",
+          "date": "2023",
+          "version": null,
+          "scope": "greater metropolitan area",
+          "source": {"url": "https://www.stat.go.jp/english/", "title": "Statistics Japan — Population Census", "snippet": "Tokyo Metropolitan Area population: approximately 37 million as of 2023."}
+        },
+        "reference_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "Wikipedia API timeout after 3 retries"
+        },
+        "scholarly_agent": {
+          "status": "ok",
+          "claim": "The Tokyo Greater Metropolitan Area houses 37.4 million residents according to 2023 census data.",
+          "date": "2023",
+          "version": null,
+          "scope": "Greater Metropolitan Area",
+          "source": {"url": "https://doi.org/10.1000/tokyo_urban", "title": "Tokyo Urban Growth Study 2023", "snippet": "37.4 million in Greater Tokyo as of the 2023 census — the densest urban zone globally."}
+        }
+      },
+      "expected_state": "agreement",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": "Tokyo's greater metropolitan area has approximately 37 million people.",
+      "required_facts": ["37", "million"],
+      "forbidden_facts": []
+    },
+    {
+      "id": "two_agents_fail",
+      "query": "What is the GDP of Iceland?",
+      "agents": {
+        "web_agent": {
+          "status": "ok",
+          "claim": "Iceland's GDP is approximately $29 billion USD as of 2023.",
+          "date": "2023",
+          "version": null,
+          "scope": null,
+          "source": {"url": "https://data.worldbank.org/country/iceland", "title": "Iceland GDP — World Bank", "snippet": "Iceland GDP: $29.07 billion current USD (2023)."}
+        },
+        "reference_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "Connection refused — Wikipedia unavailable"
+        },
+        "scholarly_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "Crossref API rate limit exceeded"
+        }
+      },
+      "expected_state": "insufficient",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": null,
+      "required_facts": [],
+      "forbidden_facts": []
+    },
+    {
+      "id": "all_agents_fail",
+      "query": "Latest AI breakthrough today",
+      "agents": {
+        "web_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "DuckDuckGo rate limit — too many requests"
+        },
+        "reference_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "Wikipedia search returned no results"
+        },
+        "scholarly_agent": {
+          "status": "retrieval_failed",
+          "claim": null,
+          "date": null,
+          "version": null,
+          "scope": null,
+          "source": null,
+          "failure_reason": "Crossref API timeout"
+        }
+      },
+      "expected_state": "insufficient",
+      "expected_conflict_type": null,
+      "expected_debate": false,
+      "expected_answer": null,
+      "required_facts": [],
+      "forbidden_facts": []
+    }
+  ]
+}

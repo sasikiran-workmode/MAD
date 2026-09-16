@@ -1,0 +1,228 @@
+[
+  {
+    "id": "temporal_unemployment",
+    "query": "What is the current unemployment rate?",
+    "expected_conflict": true,
+    "expected_conflict_type": "temporal",
+    "expected_answer": "The unemployment rate changes monthly; check the most recent BLS data.",
+    "category": "temporal",
+    "difficulty": "medium",
+    "required_facts": [
+      "unemployment"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "temporal_covid_start",
+    "query": "When did COVID-19 start?",
+    "expected_conflict": true,
+    "expected_conflict_type": "temporal",
+    "expected_answer": "COVID-19 was first identified in late 2019; WHO declared a pandemic in March 2020.",
+    "category": "temporal",
+    "difficulty": "medium",
+    "required_facts": [
+      "2019",
+      "2020"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "temporal_policy",
+    "query": "When was the General Data Protection Regulation enacted?",
+    "expected_conflict": true,
+    "expected_conflict_type": "temporal",
+    "expected_answer": "GDPR was adopted in 2016 and became enforceable in May 2018.",
+    "category": "temporal",
+    "difficulty": "medium",
+    "required_facts": [
+      "2016",
+      "2018",
+      "GDPR"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "factual_speed_of_light",
+    "query": "What is the speed of light?",
+    "expected_conflict": false,
+    "expected_conflict_type": null,
+    "expected_answer": "The speed of light in vacuum is approximately 299,792,458 m/s.",
+    "category": "factual",
+    "difficulty": "easy",
+    "required_facts": [
+      "299,792,458",
+      "speed",
+      "light"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "factual_eu_members",
+    "query": "How many countries are in the European Union?",
+    "expected_conflict": true,
+    "expected_conflict_type": "factual",
+    "expected_answer": "The EU has 27 member states as of 2020 (after Brexit).",
+    "category": "factual",
+    "difficulty": "medium",
+    "required_facts": [
+      "27"
+    ],
+    "forbidden_facts": [
+      "28"
+    ],
+    "metadata": {}
+  },
+  {
+    "id": "factual_tallest_building",
+    "query": "What is the tallest building in the world?",
+    "expected_conflict": false,
+    "expected_conflict_type": null,
+    "expected_answer": "The Burj Khalifa in Dubai at 828 metres.",
+    "category": "factual",
+    "difficulty": "easy",
+    "required_facts": [
+      "Burj Khalifa",
+      "828"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "version_python310",
+    "query": "What features does Python 3.10 support?",
+    "expected_conflict": true,
+    "expected_conflict_type": "version",
+    "expected_answer": "Python 3.10 introduced structural pattern matching (PEP 634).",
+    "category": "version",
+    "difficulty": "medium",
+    "required_facts": [
+      "Python",
+      "3.10",
+      "pattern matching"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "version_react18",
+    "query": "What changed in React 18?",
+    "expected_conflict": true,
+    "expected_conflict_type": "version",
+    "expected_answer": "React 18 introduced concurrent features and automatic batching.",
+    "category": "version",
+    "difficulty": "medium",
+    "required_facts": [
+      "React",
+      "18",
+      "concurrent"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "contextual_coffee",
+    "query": "Is coffee healthy?",
+    "expected_conflict": true,
+    "expected_conflict_type": "contextual",
+    "expected_answer": "Moderate coffee is associated with health benefits in adults; may be harmful in excess or for some populations.",
+    "category": "contextual",
+    "difficulty": "medium",
+    "required_facts": [
+      "coffee"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "contextual_drug",
+    "query": "Is the drug effective for all age groups?",
+    "expected_conflict": true,
+    "expected_conflict_type": "contextual",
+    "expected_answer": "Efficacy varies by age group; some drugs effective for adults are not recommended for children.",
+    "category": "contextual",
+    "difficulty": "hard",
+    "required_facts": [
+      "effective",
+      "age"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "source_email_encryption",
+    "query": "Is email encryption really secure?",
+    "expected_conflict": true,
+    "expected_conflict_type": "source",
+    "expected_answer": "Email encryption security depends on implementation; vulnerabilities like EFAIL have been documented.",
+    "category": "source",
+    "difficulty": "hard",
+    "required_facts": [
+      "encryption",
+      "secure"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "source_supplements",
+    "query": "Do dietary supplements actually work?",
+    "expected_conflict": true,
+    "expected_conflict_type": "source",
+    "expected_answer": "Efficacy varies by supplement; peer-reviewed studies should be prioritised over marketing claims.",
+    "category": "source",
+    "difficulty": "hard",
+    "required_facts": [
+      "supplements"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "agree_boiling_point",
+    "query": "What is the boiling point of water at sea level?",
+    "expected_conflict": false,
+    "expected_conflict_type": null,
+    "expected_answer": "Water boils at 100\u00b0C (212\u00b0F) at sea level.",
+    "category": "agreement",
+    "difficulty": "easy",
+    "required_facts": [
+      "100",
+      "Celsius",
+      "sea level"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "agree_shakespeare",
+    "query": "Who wrote Romeo and Juliet?",
+    "expected_conflict": false,
+    "expected_conflict_type": null,
+    "expected_answer": "William Shakespeare wrote Romeo and Juliet.",
+    "category": "agreement",
+    "difficulty": "easy",
+    "required_facts": [
+      "Shakespeare"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  },
+  {
+    "id": "agree_mercury",
+    "query": "What planet is closest to the Sun?",
+    "expected_conflict": false,
+    "expected_conflict_type": null,
+    "expected_answer": "Mercury is the planet closest to the Sun.",
+    "category": "agreement",
+    "difficulty": "easy",
+    "required_facts": [
+      "Mercury"
+    ],
+    "forbidden_facts": [],
+    "metadata": {}
+  }
+]

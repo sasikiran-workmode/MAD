@@ -1,0 +1,39 @@
+# Core dependencies
+pydantic==2.13.5
+pydantic-settings==2.15.0
+python-dotenv==1.2.3
+
+# Async and HTTP
+httpx==0.28.1
+aiohttp==3.14.3
+tenacity==9.1.4
+
+# FastAPI
+fastapi==0.141.1
+uvicorn==0.53.0
+starlette==1.6.0
+
+# NLI and ML
+transformers==5.17.0
+torch==2.14.0
+accelerate==1.15.0
+sentence-transformers==6.0.1
+
+# Data processing
+pandas==3.0.5
+numpy==2.5.3
+
+# Evaluation and visualization
+matplotlib==3.11.2
+seaborn==0.13.2
+scikit-learn==1.9.1
+
+# Utilities
+rich==15.0.0
+typer==0.27.2
+loguru==0.7.3
+
+# Testing
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0
